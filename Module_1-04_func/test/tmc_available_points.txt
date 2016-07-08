@@ -1,0 +1,1 @@
+[test] [test_vectorlength] M1.04

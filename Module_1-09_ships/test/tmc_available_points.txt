@@ -1,0 +1,4 @@
+[test] [test_game_over] M1.09.d
+[test] [test_shoot] M1.09.c
+[test] [test_print_field] M1.09.b
+[test] [test_set_ships] M1.09.a

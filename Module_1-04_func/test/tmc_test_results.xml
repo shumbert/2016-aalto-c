@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="http://check.sourceforge.net/xml/check_unittest.xslt"?>
+<testsuites xmlns="http://check.sourceforge.net/ns">
+  <datetime>2016-07-08 00:32:36</datetime>
+  <suite>
+    <title>Test-04_func</title>
+    <test result="success">
+      <path>.</path>
+      <fn>test_source.c:11</fn>
+      <id>test_vectorlength</id>
+      <iteration>0</iteration>
+      <duration>0.000017</duration>
+      <description>test_vectorlength</description>
+      <message>Passed</message>
+    </test>
+  </suite>
+  <duration>0.000367</duration>
+</testsuites>

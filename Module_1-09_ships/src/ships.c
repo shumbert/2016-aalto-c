@@ -12,7 +12,17 @@ const unsigned int shiplen = 3;
  */
 void set_ships(unsigned int num)
 {
-    (void) num;
+    int x, y, dir;
+    unsigned int placed = 0;
+
+    while (placed < num) {
+        x = rand() % xsize;
+        y = rand() % ysize;
+        dir = rand() % 2;
+
+        if (place_ship(x, y, dir))
+            placed++;
+    }
 }
 
 
@@ -20,6 +30,15 @@ void set_ships(unsigned int num)
  */
 void print_field(void)
 {
+    for (unsigned int j = 0; j < ysize; j++)
+        for (unsigned int i = 0; i < xsize; i++) {
+            if (is_visible(i, j))
+                printf("%c", is_ship(i, j));
+            else
+                printf("?");
+            if (i == (xsize - 1))
+                printf("\n");
+        }
 }
 
 
@@ -29,7 +48,22 @@ void print_field(void)
  */
 int shoot(void)
 {
-    return -1;  // replace this
+    int n;
+    unsigned int x, y;
+
+    printf("Coordinates: ");
+    n = scanf("%u %u", &x, &y);
+    if (n != 2 || x >= xsize || y >= ysize || is_visible(x, y))
+        return -1;
+
+    if (is_ship(x, y) == '+') {
+        hit_ship(x, y);
+        checked(x, y);
+        return 1;
+    } else {
+        checked(x, y);
+        return 0;
+    }
 }
 
 /* Task d: Returns 1 if game is over (all ships are sunk), or 0 if there
@@ -39,6 +73,13 @@ int shoot(void)
  */
 int game_over(unsigned int num)
 {
-    (void) num;
-    return 0;  // replace this
+    unsigned int sunk = 0;
+    unsigned int goal = num * shiplen;
+
+    for (unsigned int j = 0; j < ysize; j++)
+        for (unsigned int i = 0; i < xsize; i++)
+            if (is_ship(i, j) == '#')
+                sunk++;
+
+    return sunk == goal;
 }

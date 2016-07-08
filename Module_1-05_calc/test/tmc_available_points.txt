@@ -1,0 +1,2 @@
+[test] [test_simple_math] M1.05.2
+[test] [test_simple_sum] M1.05.1
