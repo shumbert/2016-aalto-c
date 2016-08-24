@@ -4,6 +4,9 @@ int main()
 {
     printf("\n--- ASCII table ---\n");
     ascii_chart(28,38);
+
+    printf("\n--- ASCII table ---\n");
+    ascii_chart(13,22);
     
     printf("\n--- Secret message ---\n");
     secret_msg(0);

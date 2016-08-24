@@ -1,3 +1,7 @@
+#include <ctype.h>
+#include <stddef.h>
+#include <stdio.h>
+#include <string.h>
 #include "source.h"
 
 
@@ -7,8 +11,13 @@
  */
 int count_alpha(const char *str)
 {
-    (void) str;
-    return 0;  // replace this
+    int count = 0;
+    while (*str) {
+        if (isalpha((int) *str))
+            count++;
+        str++;
+    }
+    return count;
 }
 
 
@@ -18,9 +27,13 @@ int count_alpha(const char *str)
  */
 int count_substr(const char *str, const char *sub)
 {
-    (void) str;
-    (void) sub;
-    return 0;  // replace this
+    char *current = (char *) str;
+    int count = 0;
+    while ((current = strstr(current, sub)) != NULL) {
+        current = current + strlen(sub);
+        count++;
+    }
+    return count;
 }
 
 

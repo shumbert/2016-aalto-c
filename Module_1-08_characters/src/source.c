@@ -14,9 +14,9 @@ void ascii_chart(char min, char max)
     int i = 0;
     for (int x = (int) min; x <= (int) max; x++) {
         if (isprint((char) x))
-            printf("%3d 0x%x %c", x, x, (char) x);
+            printf("%3d 0x%02x %c", x, x, (char) x);
         else
-            printf("%3d 0x%x ?", x, x);
+            printf("%3d 0x%02x ?", x, x);
         if (i == 3) {
             printf("\n");
             i = 0;

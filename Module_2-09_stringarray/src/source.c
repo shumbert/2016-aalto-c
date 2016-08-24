@@ -1,3 +1,5 @@
+#include <stddef.h>
+#include <stdio.h>
 #include "source.h"
 
 
@@ -6,7 +8,11 @@
  * array: string array to be printed, each string on own line */
 void print_strarray(char *array[])
 {
-    (void) array;
+    int index = 0;
+    while (array[index] != NULL) {
+        printf("%s\n", array[index]);
+        index++;
+    }
 }
 
 /* Put strings from string separated by space to a string array */
@@ -16,5 +22,20 @@ void print_strarray(char *array[])
  * arr: ready-made array that the strings will be put into */
 void str_to_strarray(char* string, char** arr)
 {
-    (void) string; (void) arr;
+    int words   = 0;
+    int current = 0;
+
+    while (*string) {
+        if (*string == ' ') {
+            arr[words][current] = '\0';
+            words++;
+            current = 0;
+        } else {
+            arr[words][current] = *string;
+            current++;
+        }
+        string++;
+    }
+    arr[words][current] = '\0';
+    arr[++words] = NULL;
 }

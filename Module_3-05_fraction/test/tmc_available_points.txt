@@ -1,0 +1,4 @@
+[test] [test_reduce] M3.05.d
+[test] [test_add] M3.05.c
+[test] [test_compare] M3.05.b
+[test] [test_set] M3.05.a

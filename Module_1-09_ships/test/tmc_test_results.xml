@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="http://check.sourceforge.net/xml/check_unittest.xslt"?>
 <testsuites xmlns="http://check.sourceforge.net/ns">
-  <datetime>2016-07-08 00:32:36</datetime>
+  <datetime>2016-08-03 00:04:58</datetime>
   <suite>
     <title>Test-09-ships</title>
     <test result="success">
@@ -9,7 +9,7 @@
       <fn>test_source.c:29</fn>
       <id>test_set_ships</id>
       <iteration>0</iteration>
-      <duration>0.000018</duration>
+      <duration>0.000021</duration>
       <description>test_set_ships</description>
       <message>Passed</message>
     </test>
@@ -18,7 +18,7 @@
       <fn>test_source.c:89</fn>
       <id>test_print_field</id>
       <iteration>0</iteration>
-      <duration>0.000091</duration>
+      <duration>0.000073</duration>
       <description>test_print_field</description>
       <message>Passed</message>
     </test>
@@ -27,7 +27,7 @@
       <fn>test_source.c:199</fn>
       <id>test_shoot</id>
       <iteration>0</iteration>
-      <duration>0.000305</duration>
+      <duration>0.000233</duration>
       <description>test_shoot</description>
       <message>Passed</message>
     </test>
@@ -36,10 +36,10 @@
       <fn>test_source.c:214</fn>
       <id>test_game_over</id>
       <iteration>0</iteration>
-      <duration>0.000022</duration>
+      <duration>0.000029</duration>
       <description>test_game_over</description>
       <message>Passed</message>
     </test>
   </suite>
-  <duration>0.001704</duration>
+  <duration>0.001450</duration>
 </testsuites>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="http://check.sourceforge.net/xml/check_unittest.xslt"?>
+<testsuites xmlns="http://check.sourceforge.net/ns">
+  <datetime>2016-08-03 00:04:59</datetime>
+  <suite>
+    <title>Test-05_fraction</title>
+    <test result="success">
+      <path>.</path>
+      <fn>test_source.c:15</fn>
+      <id>test_set</id>
+      <iteration>0</iteration>
+      <duration>0.000015</duration>
+      <description>test_set</description>
+      <message>Passed</message>
+    </test>
+    <test result="success">
+      <path>.</path>
+      <fn>test_source.c:43</fn>
+      <id>test_compare</id>
+      <iteration>0</iteration>
+      <duration>0.000020</duration>
+      <description>test_compare</description>
+      <message>Passed</message>
+    </test>
+    <test result="success">
+      <path>.</path>
+      <fn>test_source.c:77</fn>
+      <id>test_add</id>
+      <iteration>0</iteration>
+      <duration>0.000024</duration>
+      <description>test_add</description>
+      <message>Passed</message>
+    </test>
+    <test result="success">
+      <path>.</path>
+      <fn>test_source.c:91</fn>
+      <id>test_reduce</id>
+      <iteration>0</iteration>
+      <duration>0.000021</duration>
+      <description>test_reduce</description>
+      <message>Passed</message>
+    </test>
+  </suite>
+  <duration>0.001194</duration>
+</testsuites>

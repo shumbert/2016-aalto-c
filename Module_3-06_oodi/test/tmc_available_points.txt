@@ -1,0 +1,3 @@
+[test] [test_change_grade] M3.06.c
+[test] [test_add_record] M3.06.b
+[test] [test_init_record] M3.06.a

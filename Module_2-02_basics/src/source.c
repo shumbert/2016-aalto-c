@@ -7,8 +7,9 @@
  */
 void number_swap(int *a, int *b)
 {
-    (void) a;
-    (void) b;
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
 }
 
 /* Array Sum
@@ -17,9 +18,10 @@ void number_swap(int *a, int *b)
  */
 int array_sum(int *array, int count)
 {
-    (void) array;
-    (void) count;
-    return 0;  // placeholder, replace with actual code
+    int sum = 0;
+    for (int i = 0; i < count; i++)
+        sum += *(array + i);
+    return sum;
 }
 
 /* Array Reader */
@@ -29,7 +31,10 @@ int array_sum(int *array, int count)
  * returns: number of values read */
 int array_reader(int *vals, int n)
 {
-    (void) vals;
-    (void) n;
-    return 0;  // placeholder, replace with actual code
+    int read;
+    for (read = 0; read < n; read++) {
+        if (scanf("%d", vals + read) == 0)
+            break;
+    }
+    return read;
 }

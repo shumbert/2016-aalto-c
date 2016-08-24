@@ -1,0 +1,2 @@
+[test] [test_count_substr] M2.06.2
+[test] [test_count_alpha] M2.06.1

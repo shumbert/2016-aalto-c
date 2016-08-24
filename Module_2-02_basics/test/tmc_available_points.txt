@@ -1,0 +1,3 @@
+[test] [test_array_reader] M2.02.3
+[test] [test_array_sum] M2.02.2
+[test] [test_number_swap] M2.02.1

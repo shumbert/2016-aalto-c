@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="http://check.sourceforge.net/xml/check_unittest.xslt"?>
 <testsuites xmlns="http://check.sourceforge.net/ns">
-  <datetime>2016-07-08 00:32:36</datetime>
+  <datetime>2016-08-03 00:04:58</datetime>
   <suite>
     <title>Test-05-calc</title>
     <test result="success">
@@ -9,7 +9,7 @@
       <fn>test_source.c:42</fn>
       <id>test_simple_sum</id>
       <iteration>0</iteration>
-      <duration>0.000186</duration>
+      <duration>0.000196</duration>
       <description>test_simple_sum</description>
       <message>Passed</message>
     </test>
@@ -18,10 +18,10 @@
       <fn>test_source.c:75</fn>
       <id>test_simple_math</id>
       <iteration>0</iteration>
-      <duration>0.000267</duration>
+      <duration>0.000212</duration>
       <description>test_simple_math</description>
       <message>Passed</message>
     </test>
   </suite>
-  <duration>0.001041</duration>
+  <duration>0.000962</duration>
 </testsuites>

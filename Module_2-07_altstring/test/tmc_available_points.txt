@@ -1,0 +1,4 @@
+[test] [test_es_token] M2.07.d
+[test] [test_es_copy] M2.07.c
+[test] [test_es_length] M2.07.b
+[test] [test_es_print] M2.07.a

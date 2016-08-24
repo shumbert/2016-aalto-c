@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="http://check.sourceforge.net/xml/check_unittest.xslt"?>
+<testsuites xmlns="http://check.sourceforge.net/ns">
+  <datetime>2016-08-03 00:04:59</datetime>
+  <suite>
+    <title>Test-08_korso</title>
+    <test result="success">
+      <path>.</path>
+      <fn>test_source.c:13</fn>
+      <id>test_korsoroi</id>
+      <iteration>0</iteration>
+      <duration>0.000018</duration>
+      <description>test_korsoroi</description>
+      <message>Passed</message>
+    </test>
+  </suite>
+  <duration>0.000351</duration>
+</testsuites>

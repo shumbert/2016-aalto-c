@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="http://check.sourceforge.net/xml/check_unittest.xslt"?>
+<testsuites xmlns="http://check.sourceforge.net/ns">
+  <datetime>2016-08-03 00:04:59</datetime>
+  <suite>
+    <title>Test-02_arrays</title>
+    <test result="success">
+      <path>.</path>
+      <fn>test_source.c:10</fn>
+      <id>test_dyn_reader</id>
+      <iteration>0</iteration>
+      <duration>0.000093</duration>
+      <description>test_dyn_reader</description>
+      <message>Passed</message>
+    </test>
+    <test result="success">
+      <path>.</path>
+      <fn>test_source.c:46</fn>
+      <id>test_add_to_array</id>
+      <iteration>0</iteration>
+      <duration>0.000015</duration>
+      <description>test_add_to_array</description>
+      <message>Passed</message>
+    </test>
+  </suite>
+  <duration>0.000763</duration>
+</testsuites>

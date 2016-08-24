@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="http://check.sourceforge.net/xml/check_unittest.xslt"?>
+<testsuites xmlns="http://check.sourceforge.net/ns">
+  <datetime>2016-08-03 00:04:59</datetime>
+  <suite>
+    <title>Test-04_join</title>
+    <test result="success">
+      <path>.</path>
+      <fn>test_source.c:22</fn>
+      <id>test_create_vessel</id>
+      <iteration>0</iteration>
+      <duration>0.000022</duration>
+      <description>test_create_vessel</description>
+      <message>Passed</message>
+    </test>
+    <test result="success">
+      <path>.</path>
+      <fn>test_source.c:76</fn>
+      <id>test_print_vessel</id>
+      <iteration>0</iteration>
+      <duration>0.000067</duration>
+      <description>test_print_vessel</description>
+      <message>Passed</message>
+    </test>
+  </suite>
+  <duration>0.000659</duration>
+</testsuites>
