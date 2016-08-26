@@ -8,6 +8,7 @@
  */
 struct options {
     char optchar;   
+    char *argument;
     struct options *next;
 };
 

@@ -20,17 +20,22 @@ char *read_file(const char *filename)
         return NULL;
     }
 
-    buf = malloc(size);
+    buf = calloc(size, sizeof(char));
     if (buf == NULL)
         return NULL;
 
     while ((c = fgetc(f)) != EOF) {
         buf[read++] = c; 
         if (read == size) {
-            size += 50;
-            buf = realloc(buf, size);
-            if (buf == NULL)
+            char *tmp = calloc(size + 50, sizeof(char));
+            if (tmp == NULL) {
+                free(buf);
                 return NULL;
+            }
+            memcpy(tmp, buf, size);
+            free(buf);
+            buf = tmp;
+            size += 50;
         }
     }
     buf[read] = '\0';
@@ -52,7 +57,7 @@ char *remove_comments(char *input)
     int short_form = 0;
     int long_form = 0;
 
-    buf = malloc(size);
+    buf = calloc(size, sizeof(char));
     if (buf == NULL)
         return NULL;
     cur = input;
@@ -76,10 +81,16 @@ char *remove_comments(char *input)
             } else {
                 buf[read++] = *cur; 
                 if (read == size) {
-                    size += 50;
-                    buf = realloc(buf, size);
-                    if (buf == NULL)
+                    char *tmp = calloc(size + 50, sizeof(char));
+                    if (tmp == NULL) {
+                        free(buf);
+                        free(input);
                         return NULL;
+                    }
+                    memcpy(tmp, buf, size);
+                    free(buf);
+                    buf = tmp;
+                    size += 50;
                 }
             }
         }
@@ -104,34 +115,29 @@ char *indent(char *input, const char *pad)
     int size = 50;
     int level = 0;
 
-    buf = malloc(size);
+    buf = calloc(size, sizeof(char));
     if (buf == NULL)
         return NULL;
     cur = input;
     
     while (*cur) {
-        buf[read++] = *cur; 
-        if (read == size) {
-            size += 50;
-            buf = realloc(buf, size);
-            if (buf == NULL)
-                return NULL;
-        }
-
         if (*cur == '\n') {
+            buf[read++] = *cur;
+            if (read == size) {
+                char *tmp = calloc(size + 50, sizeof(char));
+                if (tmp == NULL) {
+                    free(buf);
+                    free(input);
+                    return NULL;
+                }
+                memcpy(tmp, buf, size);
+                free(buf);
+                buf = tmp;
+                size += 50;
+            }
             cur++;
-            while (*cur) {
-                if (*cur == '\n') {
-                    buf[read++] = *cur; 
-                    if (read == size) {
-                        size += 50;
-                        buf = realloc(buf, size);
-                        if (buf == NULL)
-                            return NULL;
-                    }
-                    cur++;
-                    break;
-                } else if (!isspace(*cur)) {
+            while (*cur && *cur != '\n') {
+                if (!isspace(*cur)) {
                     if (*cur == '}')
                         level--;
 
@@ -145,18 +151,6 @@ char *indent(char *input, const char *pad)
                         memcpy(buf + read, pad, strlen(pad));
                         read += strlen(pad);
                     }
-
-                    buf[read++] = *cur; 
-                    if (read == size) {
-                        size += 50;
-                        buf = realloc(buf, size);
-                        if (buf == NULL)
-                            return NULL;
-                    }
-
-                    if (*cur == '{')
-                        level++;
-                    cur++;
                     break;
                 }
                 cur++;
@@ -164,6 +158,20 @@ char *indent(char *input, const char *pad)
         } else {
             if (*cur == '{')
                 level++;
+
+            buf[read++] = *cur;
+            if (read == size) {
+                char *tmp = calloc(size + 50, sizeof(char));
+                if (tmp == NULL) {
+                    free(buf);
+                    free(input);
+                    return NULL;
+                }
+                memcpy(tmp, buf, size);
+                free(buf);
+                buf = tmp;
+                size += 50;
+            }
             cur++;
         }
     }
