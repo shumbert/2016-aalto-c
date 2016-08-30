@@ -33,19 +33,19 @@ void setOptions(Game *game, int argc, char **argv)
 int main(int argc, char **argv)
 {
 	Game game;
-        memset(&game, 0, sizeof(game));
+    memset(&game, 0, sizeof(game));
 	srand((unsigned)time(NULL));
 	//srand(1);
-        setOptions(&game, argc, argv);
-        if (game.map.tile == NULL) {
-            // NULL, unless setOptions loaded previous game
+    setOptions(&game, argc, argv);
+    if (game.map.tile == NULL) {
+        // NULL, unless setOptions loaded previous game
 	    generateMap(&game);
-            createMonsters(&game);
-            game.maxhp = 12;
-            game.hp = game.maxhp;
-        }
-        int gameOn = 1;
-        while(gameOn) {
+        createMonsters(&game);
+        game.maxhp = 12;
+        game.hp = game.maxhp;
+    }
+    int gameOn = 1;
+    while (gameOn) {
 		char buffer[80];
 		showMap(&game);
 		printf("command >");

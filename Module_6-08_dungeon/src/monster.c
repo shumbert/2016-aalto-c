@@ -89,7 +89,29 @@ void monsterAction(Game *game) {
  * set appropriately (see exercise instructions) 
  */
 void createMonsters(Game *game) {
-	(void) game;
+    unsigned int n = 0;
+
+    game->monsters = malloc(sizeof(struct creature_st) * game->opts.numMonsters);
+    while (n < game->opts.numMonsters) {
+        int y = rand() % game->opts.mapHeight;
+        int x = rand() % game->opts.mapWidth;
+
+        if (!isBlocked(game, x, y)) {
+            for (unsigned int i = 0; i < n; i++)
+                if (game->monsters[i].pos.x == x && game->monsters[i].pos.y == y)
+                    continue;
+
+            int index = rand() % 3;
+            strcpy(game->monsters[n].name, types[index].name);
+            game->monsters[n].sign = types[index].sign;
+            game->monsters[n].maxhp = (rand() % (types[index].hphigh - types[index].hplow)) + types[index].hplow;
+            game->monsters[n].hp = (float) game->monsters[n].maxhp;
+            game->monsters[n].pos.x = x;
+            game->monsters[n].pos.y = y;
+            n++;
+        }
+    }
+    game->numMonsters = game->opts.numMonsters;
 }
 
 /* Determine whether monster moves towards or away from player character.

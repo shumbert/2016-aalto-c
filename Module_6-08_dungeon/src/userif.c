@@ -152,10 +152,10 @@ void printMe(const Game *game)
  */
 int isBlocked(Game *game, int x, int y)
 {
-	(void) game;
-	(void) x;
-	(void) y;
-    return 0;
+    if ((unsigned int) y < game->opts.mapHeight && (unsigned int) x < game->opts.mapWidth)
+        if (game->map.tile[y][x] == TILE_OPEN || game->map.tile[y][x] == TILE_ROOM)
+            return 0;
+    return 1;
 }
 
 /* Attack the given monster
